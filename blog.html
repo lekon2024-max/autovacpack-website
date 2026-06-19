@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ALLTOVAC Blog — Industry insights, technical articles, and latest news about thermoformer vacuum packaging machines and food packaging solutions.">
+    <title>Blog — Thermoformer Vacuum Packaging Insights | ALLTOVAC</title>
+    <style>
+        :root {
+            --blue-dark: #0d2137; --blue: #1a3a5c; --blue-mid: #00509e; --blue-light: #0066cc;
+            --accent: #e8781a; --accent-hover: #c56514; --white: #fff;
+            --gray-50: #f8fafb; --gray-100: #f0f3f6; --gray-200: #e2e7ec; --gray-300: #c8cfd8;
+            --gray-600: #5f6b7a; --gray-800: #2d3643;
+            --shadow: 0 4px 16px rgba(0,0,0,0.10); --shadow-lg: 0 12px 40px rgba(0,0,0,0.14);
+            --radius: 8px; --radius-lg: 16px; --max-width: 1200px; --nav-height: 64px;
+        }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;scroll-padding-top:var(--nav-height)}
+        body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Arial,sans-serif;color:var(--gray-800);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+        a{text-decoration:none;color:inherit}img{max-width:100%;height:auto;display:block}
+        .container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 24px}
+        .section{padding:72px 0}
+        .section-tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue-light);margin-bottom:12px}
+        .section-title{font-size:32px;font-weight:800;color:var(--blue-dark);margin-bottom:14px}
+        .section-subtitle{font-size:16px;color:var(--gray-600);max-width:640px;margin:0 auto;line-height:1.7}
+        .section-divider{width:56px;height:3px;background:var(--accent);margin:18px auto 0;border-radius:2px}
+
+        .navbar{position:fixed;top:0;left:0;right:0;height:var(--nav-height);background:rgba(13,33,55,0.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:1000;display:flex;align-items:center}
+        .navbar .container{display:flex;align-items:center;justify-content:space-between;height:100%}
+        .nav-logo{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:800;color:var(--white);letter-spacing:1px}
+        .nav-logo .logo-icon{width:38px;height:38px;background:var(--accent);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:900;color:var(--white)}
+        .nav-right{display:flex;align-items:center;gap:10px}
+        .lang-switcher{display:flex;gap:2px;background:rgba(255,255,255,0.08);border-radius:20px;padding:3px}
+        .lang-btn{width:34px;height:30px;border-radius:18px;border:none;cursor:pointer;font-size:11px;font-weight:700;color:rgba(255,255,255,0.6);background:transparent;transition:all 0.25s}
+        .lang-btn.active{background:var(--accent);color:var(--white)}
+        .lang-btn:hover:not(.active){color:var(--white);background:rgba(255,255,255,0.1)}
+        .nav-back{color:rgba(255,255,255,0.78);font-size:13px;font-weight:600;padding:8px 14px;border-radius:6px;transition:all 0.25s}
+        .nav-back:hover{color:var(--white);background:rgba(255,255,255,0.08)}
+        .nav-phone{color:var(--white);font-size:12px;font-weight:700;background:var(--accent);padding:7px 16px;border-radius:20px;white-space:nowrap;transition:background 0.25s}
+        .nav-phone:hover{background:var(--accent-hover)}
+
+        .page-hero{background:linear-gradient(135deg,var(--blue-dark) 0%,#0a2947 40%,#0d3b66 100%);padding:110px 0 70px;text-align:center;color:var(--white)}
+        .page-hero h1{font-size:40px;font-weight:900;margin-bottom:12px}
+        .page-hero p{font-size:17px;color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto}
+        .breadcrumb{font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:18px}
+        .breadcrumb a{color:rgba(255,255,255,0.75);transition:color 0.2s}
+        .breadcrumb a:hover{color:var(--accent)}
+
+        /* Featured post */
+        .featured-post{margin-bottom:48px}
+        .featured-post a{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--gray-200);transition:all 0.3s}
+        .featured-post a:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+        .featured-post .fp-image{height:360px;background:var(--gray-100)}
+        .featured-post .fp-image img{width:100%;height:100%;object-fit:cover}
+        .featured-post .fp-content{padding:36px 36px 36px 0;display:flex;flex-direction:column;justify-content:center}
+        .fp-badge{display:inline-block;background:var(--accent);color:var(--white);padding:4px 14px;border-radius:14px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;width:fit-content}
+        .fp-title{font-size:26px;font-weight:800;color:var(--blue-dark);margin-bottom:12px;line-height:1.3}
+        .fp-excerpt{font-size:15px;color:var(--gray-600);margin-bottom:18px;line-height:1.7}
+        .fp-meta{font-size:12px;color:var(--gray-600)}
+
+        /* Post grid */
+        .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+        .post-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--gray-200);transition:all 0.3s}
+        .post-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+        .post-image{height:200px;background:var(--gray-100);overflow:hidden}
+        .post-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+        .post-card:hover .post-image img{transform:scale(1.05)}
+        .post-content{padding:24px}
+        .post-category{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue-light);margin-bottom:10px}
+        .post-title{font-size:18px;font-weight:800;color:var(--blue-dark);margin-bottom:10px;line-height:1.4}
+        .post-excerpt{font-size:13px;color:var(--gray-600);margin-bottom:14px;line-height:1.6}
+        .post-date{font-size:11px;color:var(--gray-600)}
+
+        /* Sidebar (categories) */
+        .blog-layout{display:grid;grid-template-columns:1fr 300px;gap:40px}
+        .sidebar{position:sticky;top:90px;align-self:start}
+        .sidebar-box{background:var(--gray-50);border-radius:var(--radius-lg);padding:28px;margin-bottom:24px;border:1px solid var(--gray-200)}
+        .sidebar-box h4{font-size:16px;font-weight:800;color:var(--blue-dark);margin-bottom:16px}
+        .sidebar-box ul li{margin-bottom:10px}
+        .sidebar-box ul li a{font-size:14px;color:var(--gray-600);transition:color 0.2s;display:flex;justify-content:space-between}
+        .sidebar-box ul li a:hover{color:var(--blue-light)}
+        .sidebar-box ul li a span{color:var(--gray-300);font-size:12px}
+
+        /* CTA */
+        .cta-banner{background:linear-gradient(135deg,var(--blue-dark) 0%,#0a3760 100%);padding:60px 0;text-align:center;color:var(--white)}
+        .cta-banner h2{font-size:28px;font-weight:800;margin-bottom:14px}
+        .cta-banner p{font-size:15px;color:rgba(255,255,255,0.7);margin-bottom:30px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:28px;font-size:14px;font-weight:700;cursor:pointer;border:none;transition:all 0.3s}
+        .btn-primary{background:var(--accent);color:var(--white);box-shadow:0 4px 20px rgba(232,120,26,0.35)}
+        .btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px)}
+
+
+
+        /* --- Floating Contact Bar --- */
+        .floating-contact {
+            position: fixed;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 998;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .floating-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            border-radius: 28px;
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+            white-space: nowrap;
+            text-decoration: none;
+        }
+        .floating-item .fi-icon { font-size: 20px; flex-shrink: 0; }
+        .floating-item .fi-text {
+            max-width: 0;
+            overflow: hidden;
+            transition: max-width 0.35s ease, opacity 0.3s;
+            opacity: 0;
+        }
+        .floating-item:hover .fi-text { max-width: 180px; opacity: 1; }
+        .floating-whatsapp { background: #25D366; }
+        .floating-whatsapp:hover {
+            background: #1fb855;
+            transform: translateX(-4px);
+            box-shadow: 0 6px 24px rgba(37,211,102,0.40);
+        }
+        .floating-email { background: var(--blue-light); }
+        .floating-email:hover {
+            background: var(--blue-mid);
+            transform: translateX(-4px);
+            box-shadow: 0 6px 24px rgba(0,102,204,0.35);
+        }
+        @media (max-width: 768px) {
+            .floating-contact { right: 8px; gap: 8px; }
+            .floating-item { padding: 11px 14px; font-size: 12px; }
+            .floating-item .fi-text { display: none; }
+        }
+        .footer{background:var(--blue-dark);color:rgba(255,255,255,0.55);padding:32px 0;text-align:center;font-size:12px}
+
+        @media(max-width:900px){
+            .blog-layout{grid-template-columns:1fr}
+            .sidebar{position:static}
+            .featured-post a{grid-template-columns:1fr}
+            .featured-post .fp-image{height:240px}
+            .featured-post .fp-content{padding:24px}
+        }
+        @media(max-width:768px){
+            .page-hero h1{font-size:30px}
+            .posts-grid{grid-template-columns:1fr}
+            .fp-title{font-size:22px}
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo"><div class="logo-icon">A</div><span>ALLTOVAC</span></a>
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                    <button class="lang-btn" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="pt">PT</button>
+                </div>
+                <a href="index.html" class="nav-back" data-i18n="nav.back">← Back to Home</a>
+                <a href="tel:+8618953652200" class="nav-phone">📞 +86 189 5365 2200</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">ALLTOVAC</a> / <span data-i18n="breadcrumb">Blog</span></div>
+            <h1 data-i18n="hero.title">Thermoformer Packaging Insights</h1>
+            <p data-i18n="hero.desc">Industry trends, technical guides, and application stories from the world of vacuum packaging machinery</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="blog-layout">
+                <!-- Main Content -->
+                <div>
+                    <!-- Featured Post -->
+                    <div class="featured-post">
+                        <a href="#">
+                            <div class="fp-image"><img src="thermoformer1.jpg" alt="Featured article" loading="lazy"></div>
+                            <div class="fp-content">
+                                <span class="fp-badge" data-i18n="featured.badge">Featured</span>
+                                <h2 class="fp-title" data-i18n="featured.title">How Thermoformer Vacuum Packaging Machines Are Transforming the Global Food Industry</h2>
+                                <p class="fp-excerpt" data-i18n="featured.excerpt">From meat and seafood to ready meals and medical devices, thermoformer packaging technology is revolutionizing how products are preserved, presented, and distributed worldwide. Discover the key trends driving this transformation.</p>
+                                <span class="fp-meta" data-i18n="featured.date">June 10, 2026 · 8 min read</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Posts Grid -->
+                    <div class="posts-grid">
+                        <!-- Post 1 -->
+                        <a href="#" class="post-card">
+                            <div class="post-image"><img src="thermoformer3.jpg" alt="Post 1" loading="lazy"></div>
+                            <div class="post-content">
+                                <span class="post-category" data-i18n="p1.cat">Technology</span>
+                                <h3 class="post-title" data-i18n="p1.title">PLC vs. Servo Control: Why Schneider Systems Lead in Thermoforming</h3>
+                                <p class="post-excerpt" data-i18n="p1.excerpt">An in-depth look at how advanced PLC and servo control systems improve packaging precision, reduce waste, and increase throughput.</p>
+                                <span class="post-date" data-i18n="p1.date">May 28, 2026</span>
+                            </div>
+                        </a>
+
+                        <!-- Post 2 -->
+                        <a href="#" class="post-card">
+                            <div class="post-image"><img src="thermoformer5.jpg" alt="Post 2" loading="lazy"></div>
+                            <div class="post-content">
+                                <span class="post-category" data-i18n="p2.cat">Application</span>
+                                <h3 class="post-title" data-i18n="p2.title">Hot Pot Ingredient Packaging: Automated Weighing & Filling Solutions</h3>
+                                <p class="post-excerpt" data-i18n="p2.excerpt">How automated thermoformers with integrated weighing systems are solving the labor and consistency challenges in hot pot ingredient packaging.</p>
+                                <span class="post-date" data-i18n="p2.date">May 15, 2026</span>
+                            </div>
+                        </a>
+
+                        <!-- Post 3 -->
+                        <a href="#" class="post-card">
+                            <div class="post-image"><img src="thermoformer6.jpg" alt="Post 3" loading="lazy"></div>
+                            <div class="post-content">
+                                <span class="post-category" data-i18n="p3.cat">Case Study</span>
+                                <h3 class="post-title" data-i18n="p3.title">How a Sausage Manufacturer Doubled Output with DLZ-520 Double-Sided Forming</h3>
+                                <p class="post-excerpt" data-i18n="p3.excerpt">A real-world case study: switching from single-sided to double-sided thermoforming packaging increased production by 120% while reducing labor costs.</p>
+                                <span class="post-date" data-i18n="p3.date">April 22, 2026</span>
+                            </div>
+                        </a>
+
+                        <!-- Post 4 -->
+                        <a href="#" class="post-card">
+                            <div class="post-image"><img src="thermoformer2.jpg" alt="Post 4" loading="lazy"></div>
+                            <div class="post-content">
+                                <span class="post-category" data-i18n="p4.cat">Maintenance</span>
+                                <h3 class="post-title" data-i18n="p4.title">Essential Maintenance Tips for Thermoformer Vacuum Packaging Machines</h3>
+                                <p class="post-excerpt" data-i18n="p4.excerpt">A practical maintenance guide covering daily checks, mold care, vacuum pump servicing, and how to extend your machine's service life.</p>
+                                <span class="post-date" data-i18n="p4.date">April 8, 2026</span>
+                            </div>
+                        </a>
+
+                        <!-- Post 5 -->
+                        <a href="#" class="post-card">
+                            <div class="post-image"><img src="thermoformer4.jpg" alt="Post 5" loading="lazy"></div>
+                            <div class="post-content">
+                                <span class="post-category" data-i18n="p5.cat">Industry</span>
+                                <h3 class="post-title" data-i18n="p5.title">Modified Atmosphere Packaging (MAP): The Future of Fresh Food Preservation</h3>
+                                <p class="post-excerpt" data-i18n="p5.excerpt">Understanding how MAP technology combined with thermoformer packaging extends shelf life, reduces food waste, and creates premium retail products.</p>
+                                <span class="post-date" data-i18n="p5.date">March 19, 2026</span>
+                            </div>
+                        </a>
+
+                        <!-- Post 6 -->
+                        <a href="#" class="post-card">
+                            <div class="post-image"><img src="照片/样片1.jpg" alt="Post 6" loading="lazy"></div>
+                            <div class="post-content">
+                                <span class="post-category" data-i18n="p6.cat">Guide</span>
+                                <h3 class="post-title" data-i18n="p6.title">Choosing the Right Thermoformer: DLZ-320 vs DLZ-420 vs DLZ-520</h3>
+                                <p class="post-excerpt" data-i18n="p6.excerpt">A comprehensive comparison guide to help food manufacturers select the optimal thermoformer model based on product type, volume, and budget.</p>
+                                <span class="post-date" data-i18n="p6.date">March 5, 2026</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-box">
+                        <h4 data-i18n="sidebar.categories">Categories</h4>
+                        <ul>
+                            <li><a href="#" data-i18n="cat.technology">Technology <span>2</span></a></li>
+                            <li><a href="#" data-i18n="cat.application">Application <span>2</span></a></li>
+                            <li><a href="#" data-i18n="cat.case_study">Case Study <span>1</span></a></li>
+                            <li><a href="#" data-i18n="cat.maintenance">Maintenance <span>1</span></a></li>
+                            <li><a href="#" data-i18n="cat.industry">Industry News <span>1</span></a></li>
+                            <li><a href="#" data-i18n="cat.guide">Buyer's Guide <span>1</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-box">
+                        <h4 data-i18n="sidebar.products">Our Products</h4>
+                        <ul>
+                            <li><a href="dlz-320.html">DLZ-320/420/520</a></li>
+                            <li><a href="dlz-420-double.html">DLZ-420/520 Double-Sided</a></li>
+                            <li><a href="dlz-520-hotpot.html">DLZ-520/560/620 Hot Pot</a></li>
+                            <li><a href="dlz-520-sausage.html">DLZ-520/560/620 Sausage</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-box">
+                        <h4 data-i18n="sidebar.contact">Get in Touch</h4>
+                        <p style="font-size:13px;color:var(--gray-600);line-height:1.8">
+                            📞 +86 189 5365 2200<br>
+                            🌐 www.autovacpack.com<br>
+                            📍 Zhucheng, Shandong, China
+                        </p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <h2 data-i18n="cta.title">Stay Updated on Packaging Innovation</h2>
+            <p data-i18n="cta.desc">Subscribe to our newsletter for the latest industry insights, product updates, and technical guides.</p>
+            <a href="index.html#contact" class="btn btn-primary" data-i18n="cta.btn">📩 Subscribe & Get Updates</a>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><p>Copyright © 2024 AutoVAC. All Rights Reserved. | www.autovacpack.com | 📞 +86 189 5365 2200</p></div></footer>
+
+    <script>
+        const I18N = {
+            en: {
+                'nav.back': '← Back to Home',
+                'breadcrumb': 'Blog',
+                'hero.title': 'Thermoformer Packaging Insights',
+                'hero.desc': 'Industry trends, technical guides, and application stories from the world of vacuum packaging machinery',
+                'featured.badge': 'Featured',
+                'featured.title': 'How Thermoformer Vacuum Packaging Machines Are Transforming the Global Food Industry',
+                'featured.excerpt': 'From meat and seafood to ready meals and medical devices, thermoformer packaging technology is revolutionizing how products are preserved, presented, and distributed worldwide. Discover the key trends driving this transformation.',
+                'featured.date': 'June 10, 2026 · 8 min read',
+                'p1.cat': 'Technology', 'p1.title': 'PLC vs. Servo Control: Why Schneider Systems Lead in Thermoforming', 'p1.excerpt': 'An in-depth look at how advanced PLC and servo control systems improve packaging precision, reduce waste, and increase throughput.', 'p1.date': 'May 28, 2026',
+                'p2.cat': 'Application', 'p2.title': 'Hot Pot Ingredient Packaging: Automated Weighing & Filling Solutions', 'p2.excerpt': 'How automated thermoformers with integrated weighing systems are solving the labor and consistency challenges in hot pot ingredient packaging.', 'p2.date': 'May 15, 2026',
+                'p3.cat': 'Case Study', 'p3.title': 'How a Sausage Manufacturer Doubled Output with DLZ-520 Double-Sided Forming', 'p3.excerpt': 'A real-world case study: switching from single-sided to double-sided thermoforming packaging increased production by 120% while reducing labor costs.', 'p3.date': 'April 22, 2026',
+                'p4.cat': 'Maintenance', 'p4.title': 'Essential Maintenance Tips for Thermoformer Vacuum Packaging Machines', 'p4.excerpt': 'A practical maintenance guide covering daily checks, mold care, vacuum pump servicing, and how to extend your machine\'s service life.', 'p4.date': 'April 8, 2026',
+                'p5.cat': 'Industry', 'p5.title': 'Modified Atmosphere Packaging (MAP): The Future of Fresh Food Preservation', 'p5.excerpt': 'Understanding how MAP technology combined with thermoformer packaging extends shelf life, reduces food waste, and creates premium retail products.', 'p5.date': 'March 19, 2026',
+                'p6.cat': 'Guide', 'p6.title': 'Choosing the Right Thermoformer: DLZ-320 vs DLZ-420 vs DLZ-520', 'p6.excerpt': 'A comprehensive comparison guide to help food manufacturers select the optimal thermoformer model based on product type, volume, and budget.', 'p6.date': 'March 5, 2026',
+                'sidebar.categories': 'Categories', 'sidebar.products': 'Our Products', 'sidebar.contact': 'Get in Touch',
+                'cat.technology': 'Technology', 'cat.application': 'Application', 'cat.case_study': 'Case Study', 'cat.maintenance': 'Maintenance', 'cat.industry': 'Industry News', 'cat.guide': "Buyer's Guide",
+                'cta.title': 'Stay Updated on Packaging Innovation', 'cta.desc': 'Subscribe to our newsletter for the latest industry insights, product updates, and technical guides.', 'cta.btn': '📩 Subscribe & Get Updates',
+            },
+            ru: {
+                'nav.back': '← На главную', 'breadcrumb': 'Блог',
+                'hero.title': 'Инсайты термоформовочной упаковки',
+                'hero.desc': 'Тенденции отрасли, технические руководства и истории применения из мира вакуумного упаковочного оборудования',
+                'featured.badge': 'Рекомендуемое', 'featured.title': 'Как термоформовочные вакуумные упаковочные машины трансформируют мировую пищевую промышленность',
+                'featured.excerpt': 'От мяса и морепродуктов до готовых блюд и медицинских изделий — технология термоформовочной упаковки революционизирует способы сохранения, презентации и распространения продуктов по всему миру.',
+                'featured.date': '10 июня 2026 · 8 мин чтения',
+                'p1.cat': 'Технологии', 'p1.title': 'ПЛК против сервоконтроллера: почему системы Schneider лидируют в термоформовке', 'p1.excerpt': 'Углубленный взгляд на то, как передовые системы ПЛК и сервоконтроллеров повышают точность упаковки и производительность.', 'p1.date': '28 мая 2026',
+                'p2.cat': 'Применение', 'p2.title': 'Упаковка ингредиентов для хого: автоматизированные решения взвешивания и наполнения', 'p2.excerpt': 'Как автоматизированные термоформеры со встроенными системами взвешивания решают проблемы труда и консистенции.', 'p2.date': '15 мая 2026',
+                'p3.cat': 'Кейс', 'p3.title': 'Как производитель сосисок удвоил выпуск с двусторонней формовкой DLZ-520', 'p3.excerpt': 'Реальный кейс: переход с односторонней на двустороннюю термоформовочную упаковку увеличил производство на 120%.', 'p3.date': '22 апреля 2026',
+                'p4.cat': 'Обслуживание', 'p4.title': 'Основные советы по обслуживанию термоформовочных вакуумных упаковочных машин', 'p4.excerpt': 'Практическое руководство по ежедневным проверкам, уходу за формами, обслуживанию вакуумного насоса и продлению срока службы.', 'p4.date': '8 апреля 2026',
+                'p5.cat': 'Индустрия', 'p5.title': 'Упаковка в модифицированной атмосфере (МГС): будущее сохранения свежих продуктов', 'p5.excerpt': 'Как технология МГС в сочетании с термоформовочной упаковкой продлевает срок хранения и сокращает пищевые отходы.', 'p5.date': '19 марта 2026',
+                'p6.cat': 'Гид', 'p6.title': 'Выбор правильного термоформера: DLZ-320 против DLZ-420 против DLZ-520', 'p6.excerpt': 'Сравнительное руководство для выбора оптимальной модели термоформера на основе типа продукта, объема и бюджета.', 'p6.date': '5 марта 2026',
+                'sidebar.categories': 'Категории', 'sidebar.products': 'Наша продукция', 'sidebar.contact': 'Свяжитесь с нами',
+                'cat.technology': 'Технологии', 'cat.application': 'Применение', 'cat.case_study': 'Кейсы', 'cat.maintenance': 'Обслуживание', 'cat.industry': 'Новости отрасли', 'cat.guide': 'Гид покупателя',
+                'cta.title': 'Будьте в курсе инноваций в упаковке', 'cta.desc': 'Подпишитесь на рассылку, чтобы получать последние отраслевые инсайты, обновления продуктов и технические руководства.', 'cta.btn': '📩 Подписаться на обновления',
+            },
+            es: {
+                'nav.back': '← Volver al Inicio', 'breadcrumb': 'Blog',
+                'hero.title': 'Perspectivas del Envasado por Termoformado',
+                'hero.desc': 'Tendencias de la industria, guías técnicas e historias de aplicación del mundo del envasado al vacío',
+                'featured.badge': 'Destacado', 'featured.title': 'Cómo las Máquinas de Envasado al Vacío por Termoformado Están Transformando la Industria Alimentaria Global',
+                'featured.excerpt': 'Desde carne y mariscos hasta comidas preparadas y dispositivos médicos, la tecnología de envasado por termoformado está revolucionando la forma en que los productos se conservan, presentan y distribuyen en todo el mundo.',
+                'featured.date': '10 de junio de 2026 · 8 min de lectura',
+                'p1.cat': 'Tecnología', 'p1.title': 'PLC vs. Servocontrol: Por Qué los Sistemas Schneider Lideran en Termoformado', 'p1.excerpt': 'Un análisis detallado de cómo los avanzados sistemas PLC y servocontrol mejoran la precisión y reducen el desperdicio.', 'p1.date': '28 de mayo de 2026',
+                'p2.cat': 'Aplicación', 'p2.title': 'Envasado de Ingredientes para Hot Pot: Soluciones Automatizadas de Pesaje y Llenado', 'p2.excerpt': 'Cómo los termoformadores automatizados con sistemas de pesaje integrados resuelven los desafíos de mano de obra y consistencia.', 'p2.date': '15 de mayo de 2026',
+                'p3.cat': 'Caso de Estudio', 'p3.title': 'Cómo un Fabricante de Embutidos Duplicó su Producción con el Formado de Doble Cara DLZ-520', 'p3.excerpt': 'Un caso real: el cambio de formado de una cara a doble cara aumentó la producción en un 120% y redujo los costos laborales.', 'p3.date': '22 de abril de 2026',
+                'p4.cat': 'Mantenimiento', 'p4.title': 'Consejos Esenciales de Mantenimiento para Máquinas de Envasado al Vacío por Termoformado', 'p4.excerpt': 'Una guía práctica que cubre revisiones diarias, cuidado de moldes, servicio de bomba de vacío y cómo extender la vida útil.', 'p4.date': '8 de abril de 2026',
+                'p5.cat': 'Industria', 'p5.title': 'Envasado en Atmósfera Modificada (MAP): El Futuro de la Conservación de Alimentos Frescos', 'p5.excerpt': 'Cómo la tecnología MAP combinada con el envasado por termoformado prolonga la vida útil y reduce el desperdicio de alimentos.', 'p5.date': '19 de marzo de 2026',
+                'p6.cat': 'Guía', 'p6.title': 'Eligiendo el Termoformador Adecuado: DLZ-320 vs DLZ-420 vs DLZ-520', 'p6.excerpt': 'Una guía comparativa completa para ayudar a los fabricantes a seleccionar el modelo óptimo según el tipo de producto, volumen y presupuesto.', 'p6.date': '5 de marzo de 2026',
+                'sidebar.categories': 'Categorías', 'sidebar.products': 'Nuestros Productos', 'sidebar.contact': 'Contáctenos',
+                'cat.technology': 'Tecnología', 'cat.application': 'Aplicación', 'cat.case_study': 'Caso de Estudio', 'cat.maintenance': 'Mantenimiento', 'cat.industry': 'Noticias', 'cat.guide': 'Guía del Comprador',
+                'cta.title': 'Manténgase Actualizado sobre Innovación en Envasado', 'cta.desc': 'Suscríbase a nuestro boletín para recibir las últimas novedades de la industria, actualizaciones de productos y guías técnicas.', 'cta.btn': '📩 Suscribirse y Recibir Actualizaciones',
+            }
+            },
+            pt: {
+                'nav.back': '← Voltar ao Início', 'nav.blog': 'Blog', 'breadcrumb': 'Blog',
+                'hero.title': 'Insights de Embalagem por Termoformagem',
+                'hero.desc': 'Tendências do setor, guias técnicos e histórias de aplicação do mundo das máquinas de embalagem a vácuo',
+                'featured.badge': 'Destaque', 'featured.title': 'Como as Máquinas de Embalagem a Vácuo por Termoformagem Estão Transformando a Indústria Alimentícia Global',
+                'featured.excerpt': 'De carnes e frutos do mar a refeições prontas e dispositivos médicos, a tecnologia de embalagem por termoformagem está revolucionando a forma como os produtos são preservados, apresentados e distribuídos em todo o mundo.',
+                'featured.date': '10 de junho de 2026 · 8 min de leitura',
+                'p1.cat': 'Tecnologia', 'p1.title': 'PLC vs. Servocontrole: Por Que os Sistemas Schneider Lideram na Termoformagem', 'p1.excerpt': 'Uma análise detalhada de como os avançados sistemas PLC e servocontrole melhoram a precisão e reduzem o desperdício.', 'p1.date': '28 de maio de 2026',
+                'p2.cat': 'Aplicação', 'p2.title': 'Embalagem de Ingredientes para Hot Pot: Soluções Automatizadas de Pesagem e Enchimento', 'p2.excerpt': 'Como termoformadoras automatizadas com sistemas de pesagem integrados resolvem os desafios de mão de obra e consistência.', 'p2.date': '15 de maio de 2026',
+                'p3.cat': 'Caso de Estudo', 'p3.title': 'Como um Fabricante de Embutidos Dobrou a Produção com a Formação de Dupla Face DLZ-520', 'p3.excerpt': 'Um caso real: a mudança de formação única para dupla face aumentou a produção em 120% e reduziu os custos de mão de obra.', 'p3.date': '22 de abril de 2026',
+                'p4.cat': 'Manutenção', 'p4.title': 'Dicas Essenciais de Manutenção para Máquinas de Embalagem a Vácuo por Termoformagem', 'p4.excerpt': 'Um guia prático cobrindo verificações diárias, cuidados com moldes, manutenção da bomba de vácuo e como prolongar a vida útil.', 'p4.date': '8 de abril de 2026',
+                'p5.cat': 'Indústria', 'p5.title': 'Embalagem em Atmosfera Modificada (MAP): O Futuro da Conservação de Alimentos Frescos', 'p5.excerpt': 'Como a tecnologia MAP combinada com embalagem por termoformagem prolonga a vida útil e reduz o desperdício de alimentos.', 'p5.date': '19 de março de 2026',
+                'p6.cat': 'Guia', 'p6.title': 'Escolhendo a Termoformadora Certa: DLZ-320 vs DLZ-420 vs DLZ-520', 'p6.excerpt': 'Um guia comparativo completo para ajudar fabricantes a selecionar o modelo ideal com base no tipo de produto, volume e orçamento.', 'p6.date': '5 de março de 2026',
+                'sidebar.categories': 'Categorias', 'sidebar.products': 'Nossos Produtos', 'sidebar.contact': 'Fale Conosco',
+                'cat.technology': 'Tecnologia', 'cat.application': 'Aplicação', 'cat.case_study': 'Caso de Estudo', 'cat.maintenance': 'Manutenção', 'cat.industry': 'Notícias do Setor', 'cat.guide': 'Guia do Comprador',
+                'cta.title': 'Mantenha-se Atualizado sobre Inovação em Embalagem', 'cta.desc': 'Assine nossa newsletter para receber as últimas novidades do setor, atualizações de produtos e guias técnicos.', 'cta.btn': '📩 Assinar e Receber Atualizações',
+            }
+        };
+        let currentLang='en';
+        function setLanguage(lang){currentLang=lang;const d=I18N[lang];document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d[k]!==undefined)el.innerHTML=d[k]});document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.getAttribute('data-lang')===lang));try{localStorage.setItem('autovacpack_lang',lang)}catch(e){}}
+        document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',function(){setLanguage(this.getAttribute('data-lang'))}));
+        (function(){let l='en';try{const s=localStorage.getItem('autovacpack_lang');if(s&&I18N[s])l=s;else{const bl=(navigator.language||'').split('-')[0];if(bl==='ru')l='ru';else if(bl==='es')l='es';else if(bl==='pt')l='pt'}}catch(e){}setLanguage(l)})();
+    </script>
+    <!-- Floating Contact Bar -->
+    <div class="floating-contact">
+        <a href="https://wa.me/8618953652200" target="_blank" rel="noopener" class="floating-item floating-whatsapp" title="WhatsApp">
+            <span class="fi-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+            <span class="fi-text">WhatsApp</span>
+        </a>
+        <a href="mailto:sales@autovacpack.com" class="floating-item floating-email" title="Email">
+            <span class="fi-icon">✉️</span>
+            <span class="fi-text">sales@autovacpack.com</span>
+        </a>
+    </div>
+
+</body>
+</html>

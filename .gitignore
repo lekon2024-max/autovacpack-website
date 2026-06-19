@@ -1,0 +1,29 @@
+# Large files — excluded from git
+视频/
+*.mp4
+*.mov
+
+# System files
+.DS_Store
+Thumbs.db
+.Trash
+
+# Original source files (not needed for website)
+*.ppsx
+*.pdf
+
+# Unused photos
+照片/2024.jpg
+照片/DSC*.JPG
+照片/DSC*.jpg
+照片/Thermoformer.jpg
+照片/Thermoformer5_*.jpg
+照片/Thermoformer微信图片_20250508172943Thermoformer.png
+照片/微信图片_*.jpg
+照片/奥托维克四折页*.jpg
+照片/样片3.jpg
+照片/样片4.jpg
+
+# Backup / temp
+*.bak
+*.tmp
